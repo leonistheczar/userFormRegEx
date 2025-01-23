@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/output.css">
+    <title>User Form RE</title>
+</head>
+<body class="bg-slate-200 h-screen">
+      <!-- Loader Spinner -->
+      <div id="loader" class="invisible  bg-slate-800 opacity-[0.75] fixed top-0 inset-0 flex justify-center items h-full w-full">
+        <img src="./Eclipse@1x-1.1s-200px-200px.svg" alt="icon" class="scale-50">
+      </div>
+    <div id="userForm" class="p-6 h-full flex justify-center mt-5">
+    <form class="p-4" id="form">
+      <!-- Profile -->
+        <div class="space-y-12">
+          <div class="border-b border-gray-900/10 pb-12">
+            <h2 class="text-2xl text-center font-semibold text-gray-900">Profile</h2>
+            <p class="mt-1 text-sm/6 text-gray-600">This information will be displayed publicly so be careful what you share.</p>
+      <!-- Personal Information -->
+          <div class="border-b border-gray-900/10 pb-12">
+            <h2 class="text-base/7 font-semibold text-gray-900">Personal Information</h2>
+            <p class="mt-1 text-sm/6 text-gray-600">Use a permanent address where you can receive mail.</p>
+      <!-- Name -->
+            <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+              <div class="sm:col-span-3">
+                <label for="name" class="block text-sm/6 font-medium text-gray-900">Name</label>
+                <div class="mt-2">
+                  <input type="text" name="name" id="name" autocomplete="given-name" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
+                  <span id="nameValidation" class="text-sm text-red-600 hidden">Enter a valid name</span>
+                </div>
+              </div>
+              <!-- Email -->
+              <div class="sm:col-span-4">
+                <label for="email" class="block text-sm/6 font-medium text-gray-900">Email address</label>
+                <div class="mt-2">
+                  <input id="email" name="email" type="email" autocomplete="email" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
+                  <span id="emailValidation" class="text-sm text-red-600 hidden">Enter a valid email</span>
+                </div>
+              </div>
+              <!-- Country -->
+              <div class="sm:col-span-3">
+                <label for="country" class="block text-sm/6 font-medium text-gray-900">Country</label>
+                <div class="mt-2 grid grid-cols-1">
+                  <select id="country" name="country" autocomplete="country-name" class="col-start-1 row-start-1 w-full appearance-none rounded-md bg-white py-1.5 pl-3 pr-8 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
+                    <option>Pakistan</option>
+                  </select>
+                  <svg class="pointer-events-none col-start-1 row-start-1 mr-2 size-5 self-center justify-self-end text-gray-500 sm:size-4" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" data-slot="icon">
+                    <path fill-rule="evenodd" d="M4.22 6.22a.75.75 0 0 1 1.06 0L8 8.94l2.72-2.72a.75.75 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 7.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
+                  </svg>
+                </div>
+              </div>
+            <!-- City -->
+              <div class="sm:col-span-2 sm:col-start-1">
+                <label for="city" class="block text-sm/6 font-medium text-gray-900">City</label>
+                <div class="mt-2">
+                  <input type="text" name="city" id="city" autocomplete="address-level2" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
+                </div>
+              </div>
+              <!-- ZIP Code -->
+              <div class="sm:col-span-2">
+                <label for="postal-code" class="block text-sm/6 font-medium text-gray-900">ZIP / Postal code</label>
+                <div class="mt-2">
+                  <input type="text" name="postal-code" id="postal-code" autocomplete="postal-code" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
+                  <span id="zipValidation" class="text-sm text-red-600 hidden">Incorrect Postal Code</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Cance/Save Form -->
+        <div class="mt-6 flex items-center justify-end gap-x-6">
+          <button type="button" class="text-sm/6 font-semibold text-gray-900  p-2  hover:bg-slate-900 hover:text-white hover:rounded-[10px]">Cancel</button>
+          <button type="submit" id="saveBtn" class="rounded-md bg-indigo-600 px-3 p-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Save</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <!-- Success Overlay -->
+      <!-- Main modal -->
+        <div id="saved" class="hidden mx-[25%] mb-6 relative top-[-60vh] opacity-95 z-30 md:h-auto">
+            <!-- Modal content -->
+            <div class="relative px-12 py-6 text-center bg-white rounded-lg shadow dark:bg-gray-800">
+                <div class="w-12 h-12 rounded-full bg-green-100 dark:bg-green-900 p-2 flex items-center justify-center mx-auto mb-3.5">
+                    <svg aria-hidden="true" class="w-8 h-8 text-green-500 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                    <span class="sr-only">Success</span>
+                </div>
+                <p class="mb-4 text-lg font-semibold text-gray-900 dark:text-white">Successfully submitted form.</p>
+            </div>
+        </div>      
+    <!-- JS Script -->
+    <script src="./script.js"></script>
+</body>
+</html>
